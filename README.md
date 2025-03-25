@@ -7,7 +7,7 @@
 
 A brief description of what this project does and who it's for.
 
-![Project Demo](https://via.placeholder.com/800x400?text=Project+Demo)
+![img.png](img.png)
 
 </div>
 
