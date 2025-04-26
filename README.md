@@ -2,6 +2,12 @@
 
 # Project Title
 [![Python](https://img.shields.io/badge/Python-3776ab?logo=python&logoColor=white)](https://www.python.org/)
+[![Code Quality](https://github.com/miguelbper/python-template/actions/workflows/code-quality.yaml/badge.svg)](https://github.com/miguelbper/python-template/actions/workflows/code-quality.yaml)
+[![Unit Tests](https://github.com/miguelbper/python-template/actions/workflows/tests.yaml/badge.svg)](https://github.com/miguelbper/python-template/actions/workflows/tests.yaml)
+[![codecov](https://codecov.io/gh/miguelbper/python-template/graph/badge.svg)](https://codecov.io/gh/miguelbper/python-template)
+[![License](https://img.shields.io/badge/License-MIT-green.svg?labelColor=gray)](LICENSE)
+
+<!-- [![Python](https://img.shields.io/badge/Python-3776ab?logo=python&logoColor=white)](https://www.python.org/)
 [![NumPy](https://img.shields.io/badge/NumPy-4dabcf?logo=numpy&logoColor=white)](https://numpy.org/)
 [![Pandas](https://img.shields.io/badge/Pandas-130654?logo=pandas&logoColor=white)](https://pandas.pydata.org/)
 [![Seaborn](https://img.shields.io/badge/Seaborn-5c7da2?logo=python&logoColor=white)](https://seaborn.pydata.org/)
@@ -10,7 +16,7 @@
 [![Ruff](https://img.shields.io/badge/Ruff-261230?logo=ruff&logoColor=white)](https://github.com/astral-sh/ruff)
 [![uv](https://img.shields.io/badge/uv-de5fe9?logo=uv&logoColor=white)](https://github.com/astral-sh/uv)
 [![codecov](https://codecov.io/gh/username/project-name/branch/main/graph/badge.svg)](https://codecov.io/gh/username/project-name)
-[![license](https://img.shields.io/badge/license-MIT-green.svg?labelColor=gray)](path/to/LICENCE)
+[![license](https://img.shields.io/badge/license-MIT-green.svg?labelColor=gray)](path/to/LICENCE) -->
 
 <!-- Badges -->
 <!-- Tech Stack: Languages -->
