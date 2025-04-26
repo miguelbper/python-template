@@ -5,9 +5,9 @@ default:
 # Check that all programs are installed
 [group("installation")]
 check-versions:
-    uv --version
-    just --version
-    direnv --version
+    uv --version  # https://docs.astral.sh/uv/
+    just --version  # https://github.com/casey/just
+    direnv --version  # https://direnv.net/
 
 # Allow direnv to load environment variables
 [group("installation")]
@@ -48,7 +48,7 @@ test:
 test-cov:
     uv run pytest --cov=src --cov-report=html
 
-# Create and push a new tag by incrementing the last tag's patch version
+# Create a new tag (will trigger publish.yaml workflow)
 [group("packaging")]
 publish:
     #!/usr/bin/env bash
