@@ -22,6 +22,26 @@
 - *What technologies are used?*
 - *What are the key features?*
 
+## Features
+
+- **Modern Python Tooling**: Uses `uv` for fast dependency management, `just` for command running, and `direnv` for environment management
+- **Type Safety**: Configured with `pyright` for static type checking
+- **Code Quality**: Uses `ruff` for linting and formatting
+- **Testing**: Set up with `pytest` and coverage reporting
+- **CI/CD**: GitHub Actions workflows for testing, code quality, and publishing
+- **Version Management**: Automatic version management using git tags
+
+## Tools Used
+
+- **[uv](https://docs.astral.sh/uv/)**: A fast Python package installer and resolver
+- **[just](https://github.com/casey/just)**: A command runner that makes it easy to run project-specific commands
+- **[direnv](https://direnv.net/)**: Automatically loads and unloads environment variables based on the current directory
+- **[pre-commit](https://pre-commit.com/)**: Git hooks to ensure code quality before commits
+- **[ruff](https://docs.astral.sh/ruff/)**: A fast Python linter and formatter
+- **[pyright](https://github.com/microsoft/pyright)**: Static type checker for Python
+- **[pytest](https://docs.pytest.org/)**: Testing framework
+- **[hatch](https://hatch.pypa.io/)**: Modern Python project manager
+
 ## Installation
 
 *Provide installation instructions. Write out the commands the user should use to use your project.*
@@ -36,6 +56,32 @@ cd project-name
 # Install dependencies
 uv sync
 ```
+
+## Project Structure
+
+- `src/`: Source code directory
+- `tests/`: Test files
+- `.github/workflows/`: GitHub Actions workflows
+- `justfile`: Project commands
+- `pyproject.toml`: Project configuration
+- `.envrc`: Environment variables (copy from .envrc.example)
+
+## Available Commands
+
+Use `just` to run project commands:
+
+- `just setup`: Set up the development environment
+- `just test`: Run tests
+- `just test-cov`: Run tests with coverage
+- `just pre-commit`: Run pre-commit hooks
+- `just publish`: Create a new version tag
+
+## Development Workflow
+
+1. Set up environment variables in `.envrc`
+2. Run `just setup` to initialize the project
+3. Make changes and run tests with `just test`
+4. Use `just publish` to create new versions
 
 ## Usage
 

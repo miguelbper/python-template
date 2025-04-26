@@ -1,6 +1,6 @@
 [project]
 name = "python-template"
-dynamic = ["version"]
+dynamic = ["version"]  # Version is managed by git tags
 description = "Template for python projects, using modern tooling and practices"
 readme = "README.md"
 authors = [
@@ -15,11 +15,11 @@ dependencies = []
 
 [dependency-groups]
 dev = [
-    "pre-commit>=4.2.0",
-    "pyright>=1.1.400",
-    "pytest>=8.3.5",
-    "pytest-cov>=6.1.1",
-    "ruff>=0.11.7",
+    "pre-commit>=4.2.0",  # Git hooks for code quality
+    "pyright>=1.1.400",   # Static type checker
+    "pytest>=8.3.5",      # Testing framework
+    "pytest-cov>=6.1.1",  # Test coverage reporting
+    "ruff>=0.11.7",       # Linter and formatter
 ]
 
 # ------------------------------------------------------------------------------
@@ -33,6 +33,7 @@ build-backend = "hatchling.build"
 [tool.hatch.build.targets.wheel]
 packages = ["src/python_template"]
 
+# Version management using git tags
 [tool.hatch.version]
 source = "vcs"
 
@@ -41,7 +42,7 @@ source = "vcs"
 [tool.uv]
 package = true
 
-# Make project runnable from the command line
+# Make project runnable from command line
 # After installing a library, running `python_template` will run the `main` function
 [project.scripts]
 python-template = "python_template.main:main"
@@ -51,21 +52,21 @@ python-template = "python_template.main:main"
 # ------------------------------------------------------------------------------
 
 [tool.ruff]
-target-version = "py313"  # Choose same version as `requires-python`
+target-version = "py313"  # Choose same version as in `requires-python`
 line-length = 120
 
 # Set of rules taken from https://docs.astral.sh/ruff/linter/#rule-selection
 [tool.ruff.lint]
 select = [
-    "E",  # pycodestyle
-    "F",  # Pyflakes
-    "I",  # isort
-    "B",  # flake8-bugbear
-    "UP",  # pyupgrade
-    "SIM",  # flake8-simplify
+    "E",   # pycodestyle - Python style guide
+    "F",   # Pyflakes - Python linter
+    "I",   # isort - Import sorting
+    "B",   # flake8-bugbear - Bug detection
+    "UP",  # pyupgrade - Python upgrade tool
+    "SIM", # flake8-simplify - Code simplification
 ]
 
-# Group first-party packages last
+# Tell Ruff/isort that python_template is first party, so that it puts it last in the imports
 [tool.ruff.lint.isort]
 known-first-party = ["python_template"]
 
@@ -73,8 +74,9 @@ known-first-party = ["python_template"]
 venvPath = "."
 venv = ".venv"
 strict = ["**/*.py"]
-pythonVersion = "3.13"  # Choose same version as `requires-python`
+pythonVersion = "3.13"  # Choose same version as in `requires-python`
 
+# Ignore lines in the main block for coverage purposes
 [tool.coverage.report]
 exclude_also = [
     "if __name__ == .__main__.:",
