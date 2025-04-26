@@ -47,5 +47,3 @@ test:
 [group("testing")]
 test-cov:
     uv run pytest --cov=src --cov-report=html
-
-# TODO: just command to update package versions in pyproject.toml
