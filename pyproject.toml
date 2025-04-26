@@ -1,6 +1,6 @@
 [project]
 name = "python-template"
-version = "0.1.0"
+dynamic = ["version"]
 description = "Template for python projects, using modern tooling and practices"
 readme = "README.md"
 authors = [
@@ -32,6 +32,9 @@ build-backend = "hatchling.build"
 
 [tool.hatch.build.targets.wheel]
 packages = ["src/python_template"]
+
+[tool.hatch.version]
+source = "vcs"
 
 # https://docs.astral.sh/uv/concepts/projects/config/#project-packaging
 # will force a project to be built and installed into the project environment
