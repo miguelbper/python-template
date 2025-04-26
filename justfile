@@ -47,3 +47,29 @@ test:
 [group("testing")]
 test-cov:
     uv run pytest --cov=src --cov-report=html
+
+# Create and push a new tag by incrementing the last tag's patch version
+[group("packaging")]
+publish:
+    #!/usr/bin/env bash
+    # Get last tag from git
+    CURRENT_VERSION=$(git describe --tags --abbrev=0)
+    echo "Current version: $CURRENT_VERSION"
+
+    # Remove 'v' prefix if it exists
+    VERSION_NUMBER=$(echo $CURRENT_VERSION | sed 's/^v//')
+
+    # Split version into major.minor.patch
+    IFS='.' read -r MAJOR MINOR PATCH <<< "$VERSION_NUMBER"
+
+    # Increment patch version
+    NEW_PATCH=$((PATCH + 1))
+    NEW_VERSION="$MAJOR.$MINOR.$NEW_PATCH"
+
+    # Create git tag (always with 'v' prefix)
+    NEW_TAG="v$NEW_VERSION"
+    echo "New version: $NEW_TAG"
+
+    # Create and push the new tag
+    git tag -a "$NEW_TAG" -m "Release version $NEW_VERSION"
+    git push origin "$NEW_TAG"
