@@ -34,17 +34,17 @@ reminder-env-vars:
 setup: direnv-allow create-venv install-pre-commit reminder-env-vars
 
 # Run pre-commit hooks
-[group("linting & formatting")]
+[group("linting, formatting & testing")]
 pre-commit:
     uv run pre-commit run --all
 
 # Run tests
-[group("testing")]
+[group("linting, formatting & testing")]
 test:
     uv run pytest
 
 # Run tests with coverage report
-[group("testing")]
+[group("linting, formatting & testing")]
 test-cov:
     uv run pytest --cov=src --cov-report=html
 
@@ -73,3 +73,8 @@ publish:
     # Create and push the new tag
     git tag -a "$NEW_TAG" -m "Release version $NEW_VERSION"
     git push origin "$NEW_TAG"
+
+# Print tree of the project (requires installing tree)
+[group("tools")]
+tree:
+    tree -a -I ".venv|.git|.pytest_cache|.coverage|dist|__pycache__" --dirsfirst
