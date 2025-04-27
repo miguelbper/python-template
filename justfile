@@ -2,7 +2,7 @@
 default:
     just --list
 
-# Check that all programs are installed
+# Check that all required tools are installed
 [group("installation")]
 check-versions:
     uv --version  # https://docs.astral.sh/uv/
@@ -14,7 +14,7 @@ check-versions:
 direnv-allow:
     direnv allow
 
-# Create uv virtual environment
+# Create virtual environment and install dependencies
 [group("installation")]
 create-venv:
     uv sync
@@ -24,31 +24,31 @@ create-venv:
 install-pre-commit:
     uv run pre-commit install
 
-# Setup environment variables (reminder)
+# Remind user to set up environment variables
 [group("installation")]
 reminder-env-vars:
     @echo "\033[1;33mRemember to setup the environment variables by editing the .envrc file!\033[0m"
 
-# Setup repo
+# Run all project setup steps (assumes uv, just, and direnv are installed)
 [group("installation")]
 setup: direnv-allow create-venv install-pre-commit reminder-env-vars
 
 # Run pre-commit hooks
-[group("linting & formatting")]
+[group("linting, formatting & testing")]
 pre-commit:
     uv run pre-commit run --all
 
 # Run tests
-[group("testing")]
+[group("linting, formatting & testing")]
 test:
     uv run pytest
 
-# Run tests with coverage
-[group("testing")]
+# Run tests with coverage report
+[group("linting, formatting & testing")]
 test-cov:
     uv run pytest --cov=src --cov-report=html
 
-# Create a new tag (will trigger publish.yaml workflow)
+# Create a new version tag (will trigger publish.yaml workflow)
 [group("packaging")]
 publish:
     #!/usr/bin/env bash
@@ -73,3 +73,8 @@ publish:
     # Create and push the new tag
     git tag -a "$NEW_TAG" -m "Release version $NEW_VERSION"
     git push origin "$NEW_TAG"
+
+# Print tree of the project (requires installing tree)
+[group("tools")]
+tree:
+    tree -a -I ".venv|.git|.pytest_cache|.coverage|dist|__pycache__" --dirsfirst
