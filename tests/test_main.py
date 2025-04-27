@@ -1,4 +1,4 @@
-from python_template.main import main
+from pytemplate.main import main
 
 
 def test_main() -> None:

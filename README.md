@@ -37,7 +37,7 @@ A template for Python projects, using:
 │       └── tests.yaml         # Runs the test suite
 │
 ├── src
-│   └── python_template        # Main package source code
+│   └── pytemplate        # Main package source code
 │       ├── __init__.py
 │       └── main.py            # Example script
 │

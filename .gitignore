@@ -180,3 +180,6 @@ cython_debug/
 
 # direnv configuration file containing environment variables
 .envrc
+
+# VSCode settings (unit tests for example)
+.vscode/

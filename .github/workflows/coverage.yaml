@@ -27,7 +27,7 @@ jobs:
         run: uv sync --all-extras --dev
 
       - name: Run tests with coverage
-        run: uv run pytest --cov python_template
+        run: uv run pytest --cov pytemplate
 
       # For this to work, you need to
       # - have a Codecov account
