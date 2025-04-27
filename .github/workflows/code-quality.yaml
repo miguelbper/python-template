@@ -1,3 +1,5 @@
+# Runs all pre-commit hooks (which includes linting and formatting)
+
 name: Code Quality
 
 on:

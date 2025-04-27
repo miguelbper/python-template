@@ -14,7 +14,7 @@ Template for python projects, using modern tooling and practices
 ---
 
 ## Description
-A template for python projects, using:
+A template for Python projects, using:
 - **[uv](https://docs.astral.sh/uv/)**: A fast Python package installer and resolver
 - **[just](https://github.com/casey/just)**: A command runner that makes it easy to run project-specific commands
 - **[direnv](https://direnv.net/)**: Automatically loads and unloads environment variables based on the current directory
@@ -31,7 +31,7 @@ A template for python projects, using:
 .
 ├── .github
 │   └── workflows
-│       ├── code-quality.yaml  # Runs linting and type checking
+│       ├── code-quality.yaml  # Runs all pre-commit hooks (which includes linting and formatting)
 │       ├── coverage.yaml      # Reports test coverage to Codecov
 │       ├── publish.yaml       # Whenever there is a new tag, publishes the package to GitHub / PyPi
 │       └── tests.yaml         # Runs the test suite
@@ -58,7 +58,7 @@ A template for python projects, using:
 ```
 
 ## Installation
-For all functionalities in this template to work, you need to install the suggested tooling: [uv](https://docs.astral.sh/uv/), [just](https://github.com/casey/just) and [direnv](https://direnv.net/). See each individual webpage for installation instructions.
+For all functionality in this template to work, you need to install the suggested tooling: [uv](https://docs.astral.sh/uv/), [just](https://github.com/casey/just) and [direnv](https://direnv.net/). See each individual webpage for installation instructions.
 
 
 ## Usage
@@ -81,7 +81,7 @@ uv run pre-commit install
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 ## Acknowledgements
-Some links that were very informative to me when learning about modern python practices were
+Some helpful links about modern Python practices and tooling:
 - https://drivendata.co/blog/python-packaging-2023
 - https://rdrn.me/postmodern-python/
 
