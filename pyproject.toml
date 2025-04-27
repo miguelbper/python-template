@@ -3,9 +3,9 @@ name = "python-template"
 dynamic = ["version"]  # Version is managed by git tags
 description = "Template for python projects, using modern tooling and practices"
 readme = "README.md"
-authors = [
-    { name = "Author Name", email = "author@email.com" }
-]
+# authors = [
+#     { name = "Author Name", email = "author@email.com" }
+# ]
 
 # For public libraries, use the oldest supported python version
 # For private libraries, use the most recent python version

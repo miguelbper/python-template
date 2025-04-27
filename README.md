@@ -33,7 +33,7 @@ A template for Python projects, using:
 │   └── workflows
 │       ├── code-quality.yaml  # Runs all pre-commit hooks (which includes linting and formatting)
 │       ├── coverage.yaml      # Reports test coverage to Codecov
-│       ├── publish.yaml       # Whenever there is a new tag, publishes the package to GitHub / PyPi
+│       ├── publish.yaml       # Whenever there is a new tag, publishes the package to GitHub / PyPI
 │       └── tests.yaml         # Runs the test suite
 │
 ├── src
