@@ -31,7 +31,7 @@ requires = ["hatchling", "hatch-vcs"]
 build-backend = "hatchling.build"
 
 [tool.hatch.build.targets.wheel]
-packages = ["src/pytemplate"]
+packages = ["src/python_template"]
 
 # Version management using git tags
 [tool.hatch.version]
@@ -43,9 +43,9 @@ source = "vcs"
 package = true
 
 # Make project runnable from command line
-# After installing a library, running `pytemplate` will run the `main` function
+# After installing a library, running `python_template` will run the `main` function
 [project.scripts]
-pytemplate = "pytemplate.main:main"
+python_template = "python_template.main:main"
 
 # ------------------------------------------------------------------------------
 # Linting
@@ -66,9 +66,9 @@ select = [
     "SIM", # flake8-simplify - Code simplification
 ]
 
-# Tell Ruff/isort that pytemplate is first party, so that it puts it last in the imports
+# Tell Ruff/isort that python_template is first party, so that it puts it last in the imports
 [tool.ruff.lint.isort]
-known-first-party = ["pytemplate"]
+known-first-party = ["python_template"]
 
 [tool.pyright]
 venvPath = "."
