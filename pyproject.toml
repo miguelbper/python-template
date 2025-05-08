@@ -52,7 +52,6 @@ python_template = "python_template.main:main"
 # ------------------------------------------------------------------------------
 
 [tool.ruff]
-target-version = "py313"  # Choose same version as in `requires-python`
 line-length = 120
 
 # Set of rules taken from https://docs.astral.sh/ruff/linter/#rule-selection
